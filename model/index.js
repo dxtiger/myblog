@@ -1,4 +1,5 @@
 var mongoose = require('mongoose'),
+    Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId,
     dbname = 'tiger_blog',
     url = 'mongodb://localhost:27017/'+dbname;
