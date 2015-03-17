@@ -37,8 +37,8 @@ module.exports = function(app) {
 	app.post('/login',login.post);
 	app.get('/logout',login.logout);
 
-	// register 暂不开放注册
-	//app.get('/register',register.get);
-	//app.post('/register',register.post);
+	// register
+	app.get('/register',register.get);
+	app.post('/register',register.post);
 
 }
