@@ -1,0 +1,13 @@
+extends ./layout
+
+block main
+	form(action='/login',method='post')
+		div.form-group
+			label 用户名
+			input(type='text',name='email',class='form-control',placeholder='邮箱')
+		div.form-group
+			label 密码
+			input(type='password',name='password',class='form-control')
+		div.form-group
+			button(type='submit',class='btn btn-default') 登录
+			p.help-block #{message}

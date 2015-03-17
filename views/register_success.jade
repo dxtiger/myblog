@@ -1,0 +1,8 @@
+extends ./layout
+
+block main
+	p 注册完成,
+		span 5
+		|秒后返回首页
+	script.
+		setTimeout(function(){ location.href='/'; },5000)

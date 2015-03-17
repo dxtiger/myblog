@@ -1,0 +1,17 @@
+extends ./layout
+
+block main
+    each item in items
+        div.blog-post
+            h2.blog-post-title
+                a(href='/info/#{item._id}') #{item.title}
+            p.blog-post-meta #{item.date}
+            div.blog-post-info #{item.content}
+
+block page
+    nav
+        ul.pager
+            li
+                a(href='/?n=#{next}') 旧的
+            li
+                a(href='/?n=#{pre}') 新的
