@@ -50,7 +50,7 @@ function post(req,res){
 		u.save(function(){
 
 			user.findOne({email : email},function(err,result){
-				req.session.uid = result._id;
+				req.session.uid = result;
 				res.cookie('token', result.token, { maxAge : 365*24*60*60*1000 });
 				
 				var cookie = { // 等待写入 icon信息
