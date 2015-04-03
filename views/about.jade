@@ -1,15 +1,27 @@
 extends ./layout
 
+
+block script
+	link(href='/css/prettify.css',rel='stylesheet')
+	link(href='/css/github.css',rel='stylesheet')
+	script(src='/js/prettify.js')
+	script(src='/js/lang-css.js')
+	
+
 block nav
-    a.blog-nav-item(href='/') Tiger's Blog
-    a.blog-nav-item.active(href='/about') About me
+	a.blog-nav-item(href='/') Tiger's Blog
+	a.blog-nav-item.active(href='/about') About me
 
 
 block main
-    div.blog-post
-        div.blog-post-info
-            pre
-                code name : tiger
-                code mail : ryw401(AT)gmail(.)com
-                code github : 
-                    a(href="https://github.com/dxtiger") dxtiger
+	div.blog-post
+		div.blog-post-info
+			pre.prettyprint.lang-js
+				|{
+				|    name : tiger,
+				|    mail : ryw401(AT)gmail(.)com,
+				|    github : <a href="https://github.com/dxtiger">dxtiger</a>
+				|}
+	script.
+		prettyPrint();
+	

@@ -5,7 +5,6 @@ var admin = 'ryw401@163.com', // 管理员id,目前仅允许管理员发布，�
 function author(req,res,next) {
 	var token = req.cookies.token;
 	if(req.session && req.session.uid){
-		console.log(req.session.uid.email)
 		if(admin != req.session.uid.email){
 			res.redirect('/');
 			return;
