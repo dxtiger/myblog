@@ -3,8 +3,9 @@ extends ./layout
 block main
 	div.blog-post
 		h2.blog-post-title #{title}
-		p.blog-post-meta #{date}
-		div.blog-post-info #{content}
+		p.blog-post-meta  #{_date}
+		div.blog-post-info 
+			:markdown !{_content}
 	div.comment
 		h2 大侠们的评论
 		ol

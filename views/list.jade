@@ -5,8 +5,9 @@ block main
         div.blog-post
             h2.blog-post-title
                 a(href='/info/#{item._id}') #{item.title}
-            p.blog-post-meta #{item.date}
-            div.blog-post-info #{item.content}
+            p.blog-post-meta #{item._date}
+            div.blog-post-info 
+                :markdown !{item._content}
 
 block page
     nav

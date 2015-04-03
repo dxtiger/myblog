@@ -12,8 +12,9 @@ var express = require('express'),
 	
 	
 	
-app.engine('jade',jade.__express);
+app.engine('jade',jade.__express,{pretty:true});
 app.set('view engine','jade');
+app.locals.pretty = true;
 app.set('views', __dirname + '/views');
 app.set('title','tigers blog');
 
