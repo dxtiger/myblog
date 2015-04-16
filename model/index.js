@@ -2,9 +2,9 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId,
     dbname = 'tiger_blog',
-    url = 'mongodb://localhost:27017/'+dbname;
+    url = 'mongodb://tiger:t4i1g2e7r22@localhost:27017/'+dbname;
 
-mongoose.connect(url, function (err) {
+mongoose.connect(url, {auth:{authdb:"admin"}}, function (err) {
   if (err) {
     console.error('connect to %s error: ', config.db, err.message);
     process.exit(1);
