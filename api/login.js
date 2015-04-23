@@ -35,7 +35,7 @@ function post(req,res){
 	}
 	pwd = md5(pwd);
 	user.findOne({ email: email,password : pwd},function(err,result){
-		if(err){
+		if(err||!result){
 			res.render('login',{message:'请重新登录'})
 			return;
 		}
