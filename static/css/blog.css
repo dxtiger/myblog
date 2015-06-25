@@ -153,6 +153,16 @@ h6, .h6 {
   font-size: 14px;
 }
 
+.blog-post-info{
+  width:600px;margin:0 auto;
+}
+.blog-post-info .info {
+    width: 100%; position: relative; line-height:22px;
+}
+.blog-post-info .info img{
+  float: left; position: relative; margin:0 10px 0 0;
+}
+
 .comment{}
 .comment h2{ font-size: 22px; line-height: 36px; margin: 0 0 20px; border-bottom:1px solid #e5e5e5; }
 .comment li { margin: 0 0 15px; padding: 0 0 10px; border-bottom:1px solid #e5e5e5; }
