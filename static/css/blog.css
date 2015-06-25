@@ -154,10 +154,10 @@ h6, .h6 {
 }
 
 .blog-post-info{
-  width:600px;margin:0 auto; min-height: 400px;
+  width:600px;margin:0 auto; 
 }
 .blog-post-info .info {
-    width: 100%; position: relative; line-height:22px; font-size: 14px;
+    width: 100%; position: relative; line-height:22px; font-size: 14px; min-height: 400px;
 }
 .blog-post-info .info img{
   float: left; position: relative; margin:0 10px 0 0;
