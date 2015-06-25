@@ -157,7 +157,7 @@ h6, .h6 {
   width:600px;margin:0 auto; min-height: 450px;
 }
 .blog-post-info .info {
-    width: 100%; position: relative; line-height:22px;
+    width: 100%; position: relative; line-height:22px; font-size: 14px;
 }
 .blog-post-info .info img{
   float: left; position: relative; margin:0 10px 0 0;
