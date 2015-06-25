@@ -25,9 +25,9 @@ app.use(express.static(__dirname + '/static')); /** 静态文件地址前缀 **/
 /** 上传图片控件 **/
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-app.use(multer({
-	dest : './static/upload'
-})); // for parsing multipart/form-data
+// app.use(multer({
+// 	dest : './static/upload'
+// })); // for parsing multipart/form-data
 
 app.use(cookieParser());
 
