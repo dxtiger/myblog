@@ -6,23 +6,24 @@ block main
 		p.blog-post-meta  #{_date}
 		div.blog-post-info 
 			:markdown !{_content}
-	div.comment
-		h2 大侠们的评论
-		ol
-			each item in comments||[]
-				li
-					em
-						|#{item.name}
-						span #{item.date}
-					p #{item.content}
-		div.comment-add
-			form(action='/comment?q=#{gid}',method='post',target='commentFrame')
-				div.form-group
-					label 我要说两句
-					input(type='text',name='name',class='form-control',placeholder='大侠，怎么称呼？')
-				div.form-group
-					textarea(class='form-control',name='content',rows='8') 大侠，您说！
-				div.form-group
-					button(type='submit',class='btn btn-default') 提交
-					p.help-block
-			iframe(name='commentFrame',style="display:none")
+	//-
+		div.comment
+			h2 大侠们的评论
+			ol
+				each item in comments||[]
+					li
+						em
+							|#{item.name}
+							span #{item.date}
+						p #{item.content}
+			div.comment-add
+				form(action='/comment?q=#{gid}',method='post',target='commentFrame')
+					div.form-group
+						label 我要说两句
+						input(type='text',name='name',class='form-control',placeholder='大侠，怎么称呼？')
+					div.form-group
+						textarea(class='form-control',name='content',rows='8') 大侠，您说！
+					div.form-group
+						button(type='submit',class='btn btn-default') 提交
+						p.help-block
+				iframe(name='commentFrame',style="display:none")
