@@ -2,9 +2,9 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId,
     dbname = 'tiger_blog',
-    url = 'mongodb://tiger:t4i1g2e7r22@localhost:27017/'+dbname;
+    url = 'mongodb://localhost:27017/'+dbname;
 
-mongoose.connect(url, {auth:{authdb:"admin"}}, function (err) {
+mongoose.connect(url, {auth:{authdb:"tiger_blog"},user:'tiger',pwd:'qwert!@#$%'}, function (err) {
   if (err) {
     console.error('connect to %s error: ', config.db, err.message);
     process.exit(1);
@@ -23,7 +23,7 @@ var ArticleSchema = new Schema({
   date: { type: Date, default: Date.now },
   comments: [{ 
   		content: String, 
-  		date: { type: Date, default: Date.now } , 
+  		date: { type: Date, default: Date.now }, 
   		name : String 
   	}]
 });
