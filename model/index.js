@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
 
 mongoose.connect(url, {auth:{authdb:"tiger_blog"},user:'tiger',pwd:'qwert!@#$%'}, function (err) {
   if (err) {
-    console.error('connect to %s error: ', config.db, err.message);
+    console.error('connect to %s error: ', dbname, err.message);
     process.exit(1);
   }
 });

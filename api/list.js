@@ -31,8 +31,8 @@ function list(req,res){
 		max : count,
 		items : find
 	},function(err,results){
-		var m = Math.ceil(results.max/limit);
-		var i=results.items.length-1,data=[];
+		var m = results.max ? Math.ceil(results.max/limit) : 0;
+		var i= results.items ? results.items.length-1 : -1,data=[];
 		for(;i>=0;i--){
 			data[i]=results.items[i];
 			data[i]['_date'] = moment(new Date(results.items[i].date)).format('YYYY-MM-DD');

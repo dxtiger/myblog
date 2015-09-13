@@ -50,6 +50,7 @@ function post(req,res){
 		u.save(function(){
 
 			user.findOne({email : email},function(err,result){
+				console.log(result)
 				req.session.uid = result;
 				res.cookie('token', result.token, { maxAge : 365*24*60*60*1000 });
 				
