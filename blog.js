@@ -49,3 +49,5 @@ app.use(session({
 
 route(app);
 app.listen(port);
+
+console.log('server start on http://127.0.0.1:8085')

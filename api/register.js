@@ -47,15 +47,15 @@ function post(req,res){
 		u.email = email;
 		u.token = md5(parseInt(Math.random()*10000)+pwd);
 		u.password = md5(pwd);
-		u.save(function(){
-
-			user.findOne({email : email},function(err,result){
-				console.log(result)
-				req.session.uid = result;
-				res.cookie('token', result.token, { maxAge : 365*24*60*60*1000 });
+		u.save(function(err,document){
+			console.log(document)
+			user.find({email : email},function(err,_result){
+				console.log(_result)
+				req.session.uid = _result;
+				res.cookie('token', _result.token, { maxAge : 365*24*60*60*1000 });
 				
 				var cookie = { // 等待写入 icon信息
-					name : result.name
+					name : _result.name
 				};
 				cookie = JSON.stringify(cookie);
 				res.cookie('userinfo',cookie, { maxAge: 365*24*60*60*1000 });

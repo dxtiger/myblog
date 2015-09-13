@@ -2,13 +2,17 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId,
     dbname = 'tiger_blog',
-    url = 'mongodb://localhost:27017/'+dbname;
+    url = 'mongodb://tiger:qwert!#$%@localhost:27017/'+dbname,
+    port = 27017,
+    db = mongoose.createConnection();
 
-mongoose.connect(url, {auth:{authdb:"tiger_blog"},user:'tiger',pwd:'qwert!@#$%'}, function (err) {
+
+mongoose.connect(url, {auth:{authdb:'tiger_blog'}}, function (err) {
   if (err) {
     console.error('connect to %s error: ', dbname, err.message);
     process.exit(1);
   }
+  console.log('mongodb connect')
 });
 
 
@@ -49,7 +53,7 @@ var CommentSchema = new Schema({
 
 module.exports = {
   Article : mongoose.model('Artilce', ArticleSchema),
-  User : mongoose.model('User',UserSchema),
+  User : mongoose.model('Users',UserSchema),
   Comment : mongoose.model('Comment',CommentSchema)
 }
 
